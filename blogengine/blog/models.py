@@ -22,7 +22,7 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.id:
-            self.slug = gen_slug(self.slug)
+            self.slug = gen_slug(self.title)
         super().save(*args, **kwargs)
         return self.id
 
